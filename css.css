@@ -6,15 +6,40 @@ body{
     
 }
 
-/*får tabellen til at se flot ud*/
-table{
+/*får tabellen på index til at se flot ud*/
+.indextable{
     margin-left: auto;
     margin-right: auto;
     min-width: 400px;
     margin-bottom: 40px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
+/* Så der er forskel på min tabel på index-siden og på min 'albums'-side */
+
+table:not(.indextable) {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td:not(.indextable) {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th:not(.indextable) {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) :not(.indextable) {
+    background-color: #dddddd;
+  }
+  
 
 /* Laver foot på album siden*/
 .footeralbum{
@@ -24,47 +49,4 @@ table{
     left: 0;
     font-size: 20px;
     background-color: #ffffff;
-}
-
-/* Definere hvordan tabellen skal se ud, og skifter farve når man hover */
-
-.album-table{
-    border-collapse: collapse;
-    font-size: 0.9em;
-    min-width: 400px;
-    margin-top: 150px;
-}
-
-.album-table tr th{
-    background-color: #009879;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-}
-
-.album-table tr td{
-    padding: 12px 15px;
-    border-bottom: 1px solid #dddddd;
-}
-
-.album-table tr:hover{
-    background-color: rgb(118, 109, 109);
-}
-
-/* Ændrer farve og sørger for at hover effekten også virker, på disse kolloner*/
-.thecolor{
-    background-color: #f3f3f3;
-}
-
-.thecolor tr:hover{
-    background-color: rgb(118, 109, 109);
-}
-
-/* Sætter placering på fodnoten i bunden*/
-.div{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    color: #736b6bbc;
-    padding-bottom: 10px;
 }
