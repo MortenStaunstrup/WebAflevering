@@ -1,4 +1,4 @@
-/* Definere teksten generelt */
+  /* Definere teksten generelt */
 body{
     text-align: center;
     background-color: grey;
@@ -37,7 +37,7 @@ table:not(.indextable) {
   }
   
   tr:nth-child(even) :not(.indextable) {
-    background-color: #dddddd;
+    background-color: #747474;
   }
   
 

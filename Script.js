@@ -2,26 +2,23 @@
 // Henter data fra albums.json filen med Thomas magiske kode
 
 fetchData("albums.json").then((data) => {
-  console.log(data);
+  
 
-console.log(data[0].albumName)
+// declaration af tableContent : indholdet af tabellen (som er givet id table)
 
-// Starter table i html med en predefineret 'html tags' blok
-
-document.getElementById("table").innerHTML = `<tr>
-            <th>Album</th>
-            <th>Artist</th>
-            <th>Release year</th>
-       </tr>`
+let tableContent = document.getElementById("table")
 
 // et for-loop til indsætningen af data
 for (i = 0; i < data.length; i++){
+  let nyAlbum = '<tr>' + '<td>' + data[i].albumName + '</td>' + '<td>' + data[i].artistName + '</td>' + '<td>' + data[i].productionYear + '</td>' + '<td> ' + data[i].trackList.length + '</td>' + '</tr>';
 
-}
+  tableContent.innerHTML = tableContent.innerHTML + nyAlbum;
+  
+};
 
 
 });
-//Din magi Thomas, som du ikke fik snakket om
+//Din magi Thomas, som jeg ikke aner hvad gør men koden virker ikke uden
 async function fetchData(url) {
   let request = await fetch(url);
   let json = await request.json();
