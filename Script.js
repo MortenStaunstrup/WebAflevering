@@ -10,7 +10,9 @@ let tableContent = document.getElementById("table")
 
 // et for-loop til indsætningen af data
 for (i = 0; i < data.length; i++){
-  let nyAlbum = '<tr>' + '<td>' + data[i].albumName + '</td>' + '<td>' + data[i].artistName + '</td>' + '<td>' + data[i].productionYear + '</td>' + '<td> ' + data[i].trackList.length + '</td>' + '</tr>';
+  let nyAlbum = '<tr>' + '<td>' + data[i].albumName + 
+  '</td>' + '<td>' + data[i].artistName + '</td>' + '<td>' + 
+  data[i].productionYear + '</td>' + '<td>' + data[i].trackList.length + '</td>' + '</tr>';
 
   tableContent.innerHTML = tableContent.innerHTML + nyAlbum;
   
