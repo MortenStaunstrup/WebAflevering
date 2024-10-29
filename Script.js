@@ -1,10 +1,10 @@
 
-// Henter data fra albums.json filen med Thomas magiske kode
+// Henter data fra albums.json filen med Thomas' magiske kode
 
 fetchData("albums.json").then((data) => {
   
 
-// declaration af tableContent : indholdet af tabellen (som er givet id table)
+// declaration af tableContent : indholdet af tabellen (som er givet id'et table)
 
 let tableContent = document.getElementById("table")
 
