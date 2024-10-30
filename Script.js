@@ -11,9 +11,11 @@ let tableContent = document.getElementById("table")
 // et for-loop til indsætningen af data, baseret på indeks i data
 // Hver knap får sit eget 'onclick' attribut, som har funktionen 'toggleTrackList' med samme parameter eller argument (idk hvilken) som den tilsvarende div med tracks har
 for (i = 0; i < data.length; i++){
+
   let nyAlbum = '<tr>' + '<td>' + data[i].albumName + '</td>' + '<td>' + data[i].artistName + 
   '</td>' + '<td>' + data[i].productionYear + '</td>' + '<td> ' + '<button id =' + '"' + data[i].id + '"' + '" class="show_hide" onclick="toggleTrackList(' + i + ')">' + 
   'Show/Hide</button>' + '</td>' + '</tr>';
+
 
   tableContent.innerHTML = tableContent.innerHTML + nyAlbum;
   
