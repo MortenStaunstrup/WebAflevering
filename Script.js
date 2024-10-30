@@ -35,7 +35,7 @@ for(i = 0; i < data.length; i++){
  let trackDiv = document.createElement("div")  // Lav et 'div'
  trackDiv.setAttribute('id', `tracklist-${i}`)  // Giver et Id' tilsvarende indekset på albummet til hvert div med tracks
  trackDiv.style.display = "none"   //Display er sat til none, så div'en er gemt til at begynde med
-
+ trackDiv.setAttribute('class', 'trackDiv') // Giver alle trackDiv's en universal class så man senere hen kan 'hide' dem alle
 
  let ol = document.createElement("ol")  // Lav et ordered list element
 
@@ -65,9 +65,18 @@ for(i = 0; i < data.length; i++){
 });
 
 
-// Funktionen i hver button, der tager 'index' som parameter
+// Funktionen i hver button, der tager 'i' som parameter
 function toggleTrackList(i) {
-  let variabel = document.getElementById(`tracklist-${i}`);  // Definerer tilfældig variabel som elementet med samme id som som knappen
+  let variabel = document.getElementById(`tracklist-${i}`); // Definerer tilfældig variabel som elementet med samme id som som knappens parameter (toggleTracklist(i))
+  let variabel2 = document.getElementsByClassName('trackDiv') // Variabel til at vælge alle 'trackDiv'
+
+  for (k = 0; k < variabel2.length; k++){   // Looper igennem alle 'trackDiv' for at 'gemme' dem
+
+    if (variabel2[k] !== variabel){
+    variabel2[k].style.display = 'none';    // Kun 'gem' den, hvis værdien IKKE er det samme som den knap vi klikker (Ergo laver den ikke den knap vi klikker om til 'none')
+    }
+  }
+
   if (variabel.style.display === "none") {
     variabel.style.display = "block";  //Hvis display-stilen er lig med 'none' (som den er by default), lav den om til 'block' så den kan ses
   } else {
