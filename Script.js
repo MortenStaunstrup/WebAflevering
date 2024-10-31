@@ -9,14 +9,14 @@ fetchData("albums.json").then((data) => {
 let tableContent = document.getElementById("table")
 
 // et for-loop til indsætningen af data, baseret på indeks i data
-// Hver knap får sit eget 'onclick' attribut, som har funktionen 'toggleTrackList' med samme parameter eller argument (idk hvilken) som den tilsvarende div med tracks har
+// Hver knap får sit eget 'onclick' attribut, som har funktionen 'toggleTrackList' med samme parameter eller argument (idk hvilken) som den tilsvarende div med tracks har som id
 for (i = 0; i < data.length; i++){
 
   let nyAlbum = '<tr>' + '<td>' + data[i].albumName + '</td>' + '<td>' + data[i].artistName + 
-  '</td>' + '<td>' + data[i].productionYear + '</td>' + '<td> ' + '<button id =' + '"' + data[i].id + '"' + '" class="show_hide" onclick="toggleTrackList(' + i + ')">' + 
+  '</td>' + '<td>' + data[i].productionYear + '</td>' + '<td class = "buttons"> ' + '<button id =' + '"' + data[i].id + '"' + '" class="show_hide" onclick="toggleTrackList(' + data[i].id + ')">' + 
   'Show/Hide</button>' + '</td>' + '</tr>';
 
-
+// Sætter de nye albums sammen
   tableContent.innerHTML = tableContent.innerHTML + nyAlbum;
   
 };
@@ -27,7 +27,7 @@ for (i = 0; i < data.length; i++){
 let divContent = document.getElementById("trackLister")
 
 
-// Et for-loop igen, til at gennemgå alle albums
+// Et for-loop igen, til at gennemgå alle albums igen
 for(i = 0; i < data.length; i++){
   
  let trackListen = data[i].trackList  // For hvert album, skal trackListen være lig med 'trackList fra albums.json
@@ -65,10 +65,10 @@ for(i = 0; i < data.length; i++){
 });
 
 
-// Funktionen i hver button, der tager 'i' som parameter
-function toggleTrackList(i) {
-  let variabel = document.getElementById(`tracklist-${i}`); // Definerer tilfældig variabel som elementet med samme id som som knappens parameter (toggleTracklist(i))
-  let variabel2 = document.getElementsByClassName('trackDiv') // Variabel til at vælge alle 'trackDiv'
+// Funktionen i hver button, som tager sidste del af 'tracklist-' som argument
+function toggleTrackList(nogetVariabelNoget) {
+  let variabel = document.getElementById(`tracklist-${nogetVariabelNoget}`); // Definerer tilfældig variabel som elementet med samme id som som knappens parameter (toggleTracklist())
+  let variabel2 = document.getElementsByClassName('trackDiv') // Variabel til at vælge alle div med classen 'trackDiv'
 
   for (k = 0; k < variabel2.length; k++){   // Looper igennem alle 'trackDiv' for at 'gemme' dem
 

@@ -6,7 +6,7 @@ body{
     
 }
 
-
+/* Styling til table */
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -28,10 +28,16 @@ table :nth-child(even) :not(th){
 
 /* Laver foot på album siden*/
 .footeralbum{
-    position:absolute;
+    position: relative;
     bottom: 0;
     right: 0;
     left: 0;
     font-size: 20px;
     background-color: #ffffff;
+}
+
+/* Giver buttons med classen 'buttons' stylen så de går ind i center */
+.buttons{ 
+  display: flex;
+  justify-content: center;
 }
