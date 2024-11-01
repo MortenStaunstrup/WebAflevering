@@ -37,6 +37,10 @@ for(i = 0; i < data.length; i++){
  trackDiv.style.display = "none"   //Display er sat til none, så div'en er gemt til at begynde med
  trackDiv.setAttribute('class', 'trackDiv') // Giver alle trackDiv's en universal class så man senere hen kan 'hide' dem alle
 
+ // Laver en header til tracklisten
+ let trackDivHeader = document.createElement("h3")
+ trackDivHeader.innerHTML = "Tracks from: " + data[i].albumName
+
  let ol = document.createElement("ol")  // Lav et ordered list element
 
  console.log(trackListen)  // Så jeg kunne se, at alle tracks pr. album blev printet ud
@@ -54,6 +58,7 @@ for(i = 0; i < data.length; i++){
 
  }
 
+ trackDiv.appendChild(trackDivHeader)
  trackDiv.appendChild(ol)  // Gør vores 'ol' til et child-element af variablen 'trackDiv'
 
  divContent.appendChild(trackDiv)  // Gør 'trackDiv' (og dermed vores ordered list af alle tracks på det specifikke album) til et child-element af 'divContent'

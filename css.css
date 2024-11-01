@@ -1,4 +1,4 @@
-  /* Definere teksten generelt */
+/* Definerer teksten generelt */
 body{
     text-align: center;
     background-color: grey;
@@ -9,7 +9,8 @@ body{
 /* Styling til table */
 table {
   font-family: arial, sans-serif;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   width: 100%;
 }
 
@@ -20,15 +21,22 @@ td, th {
 }
 
 
+
 /* Ændre farven på hvert anden child element af table, men udeluk th tags */
 table :nth-child(even) :not(th){
-  background-color: #999999;
+  background-color: #d8d6d6;
+} /* Denne linje kode ødelægger det hele af mit css, kan ikk lave knap farve om */
+
+
+/* Anden farve når man hover over dem */
+tbody :hover :not(th){
+  background-color: #7f7d7d;
 }
-  
+
 
 /* Laver foot på album siden*/
 .footeralbum{
-    position: relative;
+    position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
@@ -36,7 +44,7 @@ table :nth-child(even) :not(th){
     background-color: #ffffff;
 }
 
-/* Giver buttons med classen 'buttons' stylen så de går ind i center */
+/* Giver div med classen 'buttons' stylen så de går ind i center */
 .buttons{ 
   display: flex;
   justify-content: center;
