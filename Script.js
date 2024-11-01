@@ -48,7 +48,7 @@ for(i = 0; i < data.length; i++){
   let trackTitle =  trackListen[j].trackTitle  // Variabel 'trackTitle' som er samme navn som trackTitle i json dokumentet
   
   let listItem = document.createElement("li")  // Lav et ny element: li til vores ordered list for hvert track title
-  listItem.textContent = trackTitle  // Teksten inde i <li></li> skal være 'trackListen[j].trackTitle'
+  listItem.innerHTML = trackTitle  // Teksten inde i <li></li> skal være 'trackListen[j].trackTitle'
 
   ol.appendChild(listItem) // Gør "listItem" til et child-element af vores variabel 'ol'
 

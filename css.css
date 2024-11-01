@@ -41,3 +41,13 @@ table :nth-child(even) :not(th){
   display: flex;
   justify-content: center;
 }
+
+/* Alle tracklister div' bliver samme størrelse som det content de har */
+#trackLister{
+  display: inline-block;
+}
+
+/* giver noget plads mellem li nummeret og track navnet */
+li{
+  padding-left: 8px;
+}
